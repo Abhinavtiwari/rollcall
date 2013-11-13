@@ -7,11 +7,20 @@
   <%= @meeting.held_on %>
 </p>
 
+
 <p>
   <b>Course:</b>
   <% course = Course.find(@meeting.course_id) %>
   <%= "#{course.department}-#{course.number} #{course.title}" %>
 </p>
+
+<% @meetings.each do |meeting| %>
+ 
+ 
+  <p> <%= meeting.id.to_s%> &nbsp;&nbsp;&nbsp;&nbsp;<%= meeting.held_on.to_s%></p>
+   
+ <% end %>
+
 
 <div class="col-md-6">
   <table class="table table-hover">
